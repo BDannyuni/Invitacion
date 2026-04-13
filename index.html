@@ -1,152 +1,698 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Plan para hoy ✨</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #ff5722;
-            --bg-gradient: linear-gradient(180deg, #fff5f2 0%, #ffe0b2 100%);
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: var(--bg-gradient);
-            font-family: 'Lexend', sans-serif;
-            color: #3e2723;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
 
-        .card {
-            background: white;
-            width: 85%;
-            max-width: 350px;
-            padding: 30px 25px;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.8);
-            animation: fadeIn 0.8s ease-out;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+<title>Plan Domingo ✨</title>
 
-        h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 3.2rem;
-            margin: 10px 0;
-            color: var(--primary);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin: 10px 0;
-        }
+<style>
 
-        .highlight {
-            background: #fff3e0;
-            padding: 2px 8px;
-            border-radius: 8px;
-            font-weight: 700;
-            color: #e64a19;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
 
-        .tostitos-box {
-            background: #fdf2f2;
-            border: 2px dashed #ffab91;
-            padding: 15px;
-            border-radius: 25px;
-            margin: 20px 0;
-        }
+html,body{height:100%;overflow:hidden}
 
-        .info-row {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
+body{font-family:'Lexend',sans-serif;background:#fff8f5;color:#3e2723}
 
-        .info-item b {
-            display: block;
-            color: var(--primary);
-        }
 
-        .btn-wa {
-            background: #25D366; /* Color oficial WhatsApp */
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 18px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 25px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
 
-        .btn-wa:active {
-            transform: scale(0.95);
-            background: #128C7E;
-        }
+.pages{
 
-        .footer-text {
-            font-size: 0.8rem;
-            margin-top: 20px;
-            color: #9e9e9e;
-        }
+  display:flex;
 
-        .emoji-float {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-    </style>
+  width:400vw;
+
+  height:100vh;
+
+  transition:transform 0.55s cubic-bezier(.77,0,.175,1);
+
+}
+
+.page{
+
+  width:100vw;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  flex-shrink:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  padding-bottom:50px;
+
+}
+
+
+
+/* WELCOME */
+
+#p0{
+
+  background:linear-gradient(160deg,#fff3ee 0%,#ffd7c4 100%);
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:40px 30px;
+
+}
+
+.w-sparkle{font-size:3rem;margin-bottom:12px}
+
+.w-title{font-family:'Caveat',cursive;font-size:3.6rem;color:#ff5722;line-height:1.1;margin-bottom:14px}
+
+.w-text{font-size:1rem;line-height:1.65;color:#5d4037;max-width:290px;margin:0 auto 32px}
+
+.btn-primary{
+
+  background:#ff5722;color:#fff;border:none;border-radius:30px;
+
+  padding:16px 38px;font-size:1.05rem;font-family:'Lexend',sans-serif;font-weight:700;
+
+  cursor:pointer;box-shadow:0 10px 24px rgba(255,87,34,.35);
+
+  -webkit-tap-highlight-color:transparent;
+
+}
+
+.btn-primary:active{transform:scale(.95)}
+
+
+
+/* PLAN PAGES */
+
+#p1,#p2{background:#fff8f5;padding-top:0}
+
+
+
+.plan-top{position:relative;width:100%;max-width:430px}
+
+.plan-img{width:100%;height:230px;object-fit:cover;display:block;background:#e0d0c8}
+
+.plan-img-fb{
+
+  width:100%;height:230px;display:none;align-items:center;
+
+  justify-content:center;font-size:4.5rem;
+
+}
+
+.plan-num{
+
+  position:absolute;top:16px;left:16px;
+
+  background:rgba(0,0,0,.52);backdrop-filter:blur(6px);
+
+  color:#fff;border-radius:20px;padding:5px 14px;
+
+  font-size:.78rem;font-weight:700;letter-spacing:.5px;
+
+}
+
+.btn-float{
+
+  position:absolute;top:16px;right:16px;
+
+  background:rgba(255,255,255,.88);backdrop-filter:blur(6px);
+
+  border:none;border-radius:20px;padding:7px 14px;
+
+  font-size:.82rem;font-family:'Lexend',sans-serif;font-weight:700;
+
+  color:#ff5722;cursor:pointer;-webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+.plan-body{width:100%;max-width:430px;padding:22px 22px 10px}
+
+.plan-name{font-family:'Caveat',cursive;font-size:2.4rem;color:#ff5722;margin-bottom:3px}
+
+.plan-tag{font-size:.88rem;color:#8d6e63;margin-bottom:18px}
+
+
+
+.stop-list{list-style:none;margin-bottom:18px}
+
+.stop-item{
+
+  display:flex;align-items:flex-start;gap:12px;
+
+  padding:11px 0;border-bottom:1px solid #f5e0d8;
+
+}
+
+.stop-item:last-child{border:none}
+
+.stop-thumb{
+
+  width:54px;height:54px;border-radius:12px;object-fit:cover;
+
+  flex-shrink:0;background:#e8d5cc;
+
+}
+
+.stop-thumb-fb{
+
+  width:54px;height:54px;border-radius:12px;flex-shrink:0;
+
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+
+}
+
+.stop-name{font-weight:700;font-size:.95rem;color:#bf360c;line-height:1.3}
+
+.stop-note{font-size:.82rem;color:#8d6e63;margin-top:2px;line-height:1.4}
+
+
+
+.plan-meta{
+
+  background:#fff3e0;border-radius:16px;padding:12px 16px;
+
+  display:flex;align-items:center;gap:10px;font-size:.9rem;margin-bottom:20px;
+
+}
+
+.plan-meta b{color:#e64a19}
+
+
+
+.btn-outline{
+
+  width:100%;background:transparent;border:2px solid #ff5722;color:#ff5722;
+
+  border-radius:22px;padding:13px;font-size:.95rem;
+
+  font-family:'Lexend',sans-serif;font-weight:700;
+
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+
+}
+
+.btn-outline:active{background:#fff3e0}
+
+
+
+/* CHOOSE */
+
+#p3{
+
+  background:linear-gradient(160deg,#fff3ee 0%,#ffd7c4 100%);
+
+  padding:36px 22px 50px;
+
+}
+
+.choose-title{font-family:'Caveat',cursive;font-size:2.8rem;color:#ff5722;margin-bottom:6px;text-align:center}
+
+.choose-sub{font-size:.9rem;color:#6d4c41;text-align:center;margin-bottom:24px}
+
+
+
+.opts{display:flex;flex-direction:column;gap:14px;width:100%;max-width:400px}
+
+.opt{
+
+  background:#fff;border:2px solid #ffccbc;border-radius:20px;
+
+  padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:14px;
+
+  transition:border-color .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent;
+
+  text-align:left;font-family:'Lexend',sans-serif;width:100%;
+
+}
+
+.opt.on{border-color:#ff5722;box-shadow:0 0 0 3px rgba(255,87,34,.15)}
+
+.opt-icon{
+
+  width:52px;height:52px;border-radius:12px;flex-shrink:0;
+
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;
+
+}
+
+.opt-label{font-weight:700;font-size:.97rem;color:#bf360c}
+
+.opt-sub{font-size:.8rem;color:#8d6e63;margin-top:2px}
+
+
+
+.sug-wrap{width:100%;max-width:400px;margin-top:20px}
+
+.sug-label{display:block;font-size:.82rem;color:#8d6e63;margin-bottom:7px}
+
+textarea#sug{
+
+  width:100%;border:1.5px solid #ffccbc;border-radius:16px;
+
+  padding:12px 14px;font-family:'Lexend',sans-serif;font-size:.88rem;
+
+  color:#3e2723;resize:none;height:78px;outline:none;background:#fff;
+
+  transition:border-color .2s;
+
+}
+
+textarea#sug:focus{border-color:#ff5722}
+
+textarea#sug::placeholder{color:#bcaaa4}
+
+
+
+.btn-wa{
+
+  width:100%;max-width:400px;margin-top:16px;
+
+  background:#25D366;color:#fff;border:none;
+
+  border-radius:22px;padding:17px;font-size:1.05rem;
+
+  font-family:'Lexend',sans-serif;font-weight:700;
+
+  cursor:pointer;box-shadow:0 8px 20px rgba(37,211,102,.3);
+
+  -webkit-tap-highlight-color:transparent;
+
+}
+
+.btn-wa:disabled{background:#b2dfdb;box-shadow:none;cursor:not-allowed}
+
+.btn-wa:not(:disabled):active{transform:scale(.97)}
+
+
+
+.footer-note{font-size:.75rem;color:#bcaaa4;text-align:center;margin-top:16px;max-width:300px}
+
+</style>
+
 </head>
+
 <body>
 
-    <div class="card">
-        <div class="emoji-float">✨</div>
-        <h1>¡Hola Michelle!</h1>
-        
-        <p>Tengo un plan tranqui que es que fueramos a Paseo Santa Lucia nadamas a pasearnos.</p>
-        
-        <p>Solo <span class="highlight">caminar, platicar</span> y pues para estar juntos.</p>
 
-        <div class="tostitos-box">
-            <p style="margin: 0; font-size: 1rem;">🔥 <b>Menú Especial:</b><br>Tostitos preparados (con todo)</p>
-            
-            <div class="info-row">
-                <div class="info-item">
-                    <b>FECHA</b>
-                    Domingo 29
-                </div>
-                <div class="info-item">
-                    <b>HORA</b>
-                    5:00 PM
-                </div>
-            </div>
+
+<div class="pages" id="pages">
+
+
+
+<!-- BIENVENIDA -->
+
+<div class="page" id="p0">
+
+  <div class="w-sparkle">🌟</div>
+
+  <h1 class="w-title">¡Hola,<br>Michelle!</h1>
+
+  <p class="w-text">Preparé dos planes para el domingo. Ve los dos y al final me dices cuál se antoja más 👀</p>
+
+  <button class="btn-primary" onclick="go(1)">Ver los planes ✨</button>
+
+</div>
+
+
+
+<!-- PLAN 1 -->
+
+<div class="page" id="p1">
+
+  <div class="plan-top">
+
+    <img class="plan-img" id="h1"
+
+      src="https://www.alteadesarrollos.com/wp-content/uploads/2022/11/1-Paseo-Tec-scaled.jpg"
+
+      alt="Paseo Tec Monterrey"
+
+      onerror="this.style.display='none';document.getElementById('h1fb').style.display='flex'">
+
+    <div class="plan-img-fb" id="h1fb" style="background:linear-gradient(135deg,#1a237e,#4a148c)">🎳🌌✨</div>
+
+    <span class="plan-num">Plan 1 de 2</span>
+
+    <button class="btn-float" onclick="go(2)">Ver plan 2 →</button>
+
+  </div>
+
+
+
+  <div class="plan-body">
+
+    <h2 class="plan-name">PLAN 1</h2>
+
+
+
+    <ul class="stop-list">
+
+      <li class="stop-item">
+
+         <img class="stop-thumb" id="s1"
+
+          src="https://bolerama.com/wp-content/uploads/2018/01/fondos-de-pantalla-gratis-121.jpg"
+
+          alt="Skyspace Espíritu de Luz"
+
+          onerror="this.style.display='none';document.getElementById('s1fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s1fb" style="display:none;background:#1a237e">🎳</div>
+
+        <div>
+
+          <div class="stop-name">Bolos — Paseo Tec</div>
+
         </div>
 
-        <p>¿Te gustaria? Paso por ti a esa hora.</p>
+      </li>
 
-        <a href="https://wa.me/5218186844769?text=¡Me%20encanta%20el%20plan!%20Nos%20vemos%20a%20las%205%20😋%20Por%20cierto%20Te%20Quiero%20Mucho%20Amooooooor%20🥰🫶🏻" class="btn-wa">
-            ¡Sii, vamos! 🚀
-        </a>
+      <li class="stop-item">
 
-        <p class="footer-text">Por cierto aqui no hay opcion de NO jajajaja <br>Te quiero Mucho Mi vida 🥰🫶🏻.</p>
+        <img class="stop-thumb" id="s1"
+
+          src="https://images.adsttc.com/media/images/6217/a138/3e4b/3133/4000/000f/large_jpg/portada.jpg?1645715764"
+
+          alt="Skyspace Espíritu de Luz"
+
+          onerror="this.style.display='none';document.getElementById('s1fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s1fb" style="display:none;background:#1a237e">🌌</div>
+
+        <div>
+
+          <div class="stop-name">Espíritu de Luz Skyspace</div>
+
+        </div>
+
+      </li>
+
+      <li class="stop-item">
+
+          <img class="stop-thumb" id="s1"
+
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c3/d4/ee/las-aliadas.jpg?w=1200&h=1200&s=1"
+
+          alt="Skyspace Espíritu de Luz"
+
+          onerror="this.style.display='none';document.getElementById('s1fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s1fb" style="display:none;background:#1a237e">🍽️</div>
+
+        <div>
+
+
+          <div class="stop-name">Cena en Aliadas</div>
+
+        </div>
+
+      </li>
+
+    </ul>
+
+
+
+    <div class="plan-meta">
+
+      <span>📅</span>
+
+      <div><b>Domingo · desde las 3 PM</b> · Paso por ti</div>
+
     </div>
 
+
+
+    <button class="btn-outline" onclick="go(2)">Ver el plan 2 antes de escoger →</button>
+
+  </div>
+
+</div>
+
+
+
+<!-- PLAN 2 -->
+
+<div class="page" id="p2">
+
+  <div class="plan-top">
+
+    <img class="plan-img" id="h2"
+
+      src="https://visitmexico.com/media/usercontent/6886be070b213-imagen2-(3)_gmxdot_jpg"
+
+      alt="Vista panorámica Monterrey Obispado"
+
+      onerror="this.style.display='none';document.getElementById('h2fb').style.display='flex'">
+
+    <div class="plan-img-fb" id="h2fb" style="background:linear-gradient(135deg,#1b5e20,#006064)">🛍️🏛️🌆</div>
+
+    <span class="plan-num">Plan 2 de 2</span>
+
+    <button class="btn-float" onclick="go(1)">← Plan 1</button>
+
+  </div>
+
+
+
+  <div class="plan-body">
+
+    <h2 class="plan-name">PLAN 2</h2>
+
+
+
+    <ul class="stop-list">
+
+      <li class="stop-item">
+
+        <img class="stop-thumb" id="s2"
+
+          src="https://www.galerias.com/_next/image?url=https%3A%2F%2Fassets.galerias.com%2Fv3%2Fassets%2Fblt1232874328ea9d91%2Fblte3f82465b5e1412b%2F695e8cd3564d342d455e2465%2FDise%C3%B1o_sin_t%C3%ADtulo.png%3Fbranch%3Dmain_a&w=3840&q=75"
+
+          alt="Galerías Monterrey"
+
+          onerror="this.style.display='none';document.getElementById('s2fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s2fb" style="display:none;background:#f3e5f5">🛍️</div>
+
+        <div>
+
+          <div class="stop-name">Galerías</div>
+
+        </div>
+
+      </li>
+
+      <li class="stop-item">
+
+        <img class="stop-thumb" id="s3"
+
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRFb44e-mxeRA6oovXQmZ9AYAO39QTDBLokQ&s"
+
+          alt="Museo Obispado"
+
+          onerror="this.style.display='none';document.getElementById('s3fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s3fb" style="display:none;background:#e8f5e9">🏛️</div>
+
+        <div>
+
+          <div class="stop-name">Museo del Obispado</div>
+
+        </div>
+
+      </li>
+
+      <li class="stop-item">
+
+        <img class="stop-thumb" id="s4"
+
+          src="https://s0.wklcdn.com/image_302/9073005/161116595/100973541Master.jpg"
+
+          alt="Mirador Obispado"
+
+          onerror="this.style.display='none';document.getElementById('s4fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s4fb" style="display:none;background:#e3f2fd">🌆</div>
+
+        <div>
+
+          <div class="stop-name">Mirador Obispado</div>
+
+        </div>
+
+      </li>
+
+      <li class="stop-item">
+
+         <img class="stop-thumb" id="s4"
+
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpTTNqLyosVE4OFmAFSbDMgdnP59NDtEjWA&s"
+
+          alt="Mirador Obispado"
+
+          onerror="this.style.display='none';document.getElementById('s4fb').style.display='flex'">
+
+        <div class="stop-thumb-fb" id="s4fb" style="display:none;background:#e3f2fd">🍣</div>
+
+        <div>
+
+          <div class="stop-name">Cena Moshi Moshi</div>
+
+        </div>
+
+      </li>
+
+    </ul>
+
+
+
+    <div class="plan-meta">
+
+      <span>📅</span>
+
+      <div><b>Domingo · desde las 3 PM</b> · Paso por ti</div>
+
+    </div>
+
+
+
+    <button class="btn-outline" onclick="go(3)">Ya vi los dos — escoger ✓</button>
+
+  </div>
+
+</div>
+
+
+
+<!-- ESCOGER -->
+
+<div class="page" id="p3">
+
+  <h2 class="choose-title">¿Cuál se antoja? 💕</h2>
+
+  <p class="choose-sub">Escoge uno y si quieres cambiar algo me dices abajo</p>
+
+
+
+  <div class="opts">
+
+    <button class="opt" id="o1" onclick="pick(1)">
+
+      <div class="opt-icon" style="background:#e8eaf6">🎳</div>
+
+      <div>
+
+        <div class="opt-label">Plan 1 · Noche de Arte</div>
+
+        <div class="opt-sub">Bolos → Skyspace → Cena Aliadas</div>
+
+      </div>
+
+    </button>
+
+    <button class="opt" id="o2" onclick="pick(2)">
+
+      <div class="opt-icon" style="background:#e8f5e9">🌆</div>
+
+      <div>
+
+        <div class="opt-label">Plan 2 · City Explorer</div>
+
+        <div class="opt-sub">Galerías → Obispado → Mirador → Moshi Moshi</div>
+
+      </div>
+
+    </button>
+
+  </div>
+
+
+
+  <div class="sug-wrap">
+
+    <label class="sug-label">¿Algo que quieras cambiar o agregar? (opcional)</label>
+
+    <textarea id="sug" placeholder="Ej: mejor vamos al cine, o tengo antojo de otra cosa..."></textarea>
+
+  </div>
+
+
+
+  <button class="btn-wa" id="bwa" disabled onclick="enviar()">
+
+    Mandar mi respuesta por WhatsApp 💬
+
+  </button>
+
+
+
+  <p class="footer-note">Te quiero mucho mi vida 🥰🫶🏻 — aquí no hay opción de no jajaja</p>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+var sel=0;
+
+function go(n){
+
+  document.getElementById('pages').style.transform='translateX(-'+(n*100)+'vw)';
+
+  setTimeout(function(){document.getElementById('p'+n).scrollTop=0},20);
+
+}
+
+function pick(n){
+
+  sel=n;
+
+  document.getElementById('o1').classList.toggle('on',n===1);
+
+  document.getElementById('o2').classList.toggle('on',n===2);
+
+  document.getElementById('bwa').disabled=false;
+
+}
+
+function enviar(){
+
+  if(!sel)return;
+
+  var n={1:'🎳 Plan 1: Noche de Arte (Bolos → Skyspace Espíritu de Luz → Cena Aliadas)',2:'🌆 Plan 2: City Explorer (Galerías → Museo Obispado → Mirador → Cena Moshi Moshi)'};
+
+  var sug=document.getElementById('sug').value.trim();
+
+  var msg='¡Hola mi vida! 💕 Escogí el '+n[sel];
+
+  if(sug)msg+='\n\n💭 '+sug;
+
+  msg+='\n\nTe quiero mucho 🥰🫶🏻';
+
+  window.open('https://wa.me/5218186844769?text='+encodeURIComponent(msg),'_blank');
+
+}
+
+</script>
+
 </body>
-</html>
+
+</html>)
